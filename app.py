@@ -15,9 +15,9 @@ Expert = namedtuple('Expert', ['id', 'name', 'image'])
 def ask_question(expert_id, question):
     prompt = template_dict.get(expert_id).format(user_question=question)
     response = openai.Completion.create(
-        engine="davinci",
+        # engine="davinci",
         # engine="text-davinci-001",
-        # engine="text-davinci-002",
+        engine="text-davinci-002",
         prompt=prompt,
         temperature=0.7,
         max_tokens=150,
